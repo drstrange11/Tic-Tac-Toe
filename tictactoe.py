@@ -46,7 +46,7 @@ while a:
                 b = raw_input('Player 2:\t')
                 a = a.lower()
                 b = b.lower()
-
+        f1=0
         for i in range(1,10):
             if flag==0:
                 print('Player  1 - Enter the position you want to insert')
@@ -67,78 +67,40 @@ while a:
                     flag=0
                     print_board(l)
 
-            if l[1]=='X' and l[2]== 'X' and l[3]== 'X':
+            if l[1]==l[2]==l[3]=='X'   or \
+            l[4] == l[5] == l[6] == 'X' or \
+            l[7]==l[8]==l[9]=='X'    or \
+            l[1]==l[4]==l[7]=='X' or \
+            l[2]==l[5]==l[8]=='X' or \
+            l[3]==l[6]==l[9]=='X' or \
+            l[1] == l[5] == l[9] == 'X' or \
+            l[3] == l[5] == l[7] == 'X' :
                 if a=='x':
                     print('Player 1 wins!')
                 else:
                     print('Player 2 wins!')
                 break
-            elif l[1]=='O' and l[2]=='O' and l[3]=='O':
+
+            elif l[1]==l[2]==l[3]=='O'   or \
+            l[4] == l[5] == l[6] == 'O' or \
+            l[7]==l[8]==l[9]=='O'    or \
+            l[1]==l[4]==l[7]=='O' or \
+            l[2]==l[5]==l[8]=='O' or \
+            l[3]==l[6]==l[9]=='O' or \
+            l[1] == l[5] == l[9] == 'O' or \
+            l[3] == l[5] == l[7] == 'O' :
                 if a=='o':
                     print('Player 1 wins!')
                 else:
                     print('Player 2 wins!')
                 break
-            elif l[1]=='X' and l[4]=='X' and l[7]=='X':
-                if a=='x':
-                    print('Player 1 wins!')
-                else:
-                    print('Player 2 wins!')
-                break
-            elif l[1]=='O' and l[4]=='O' and l[7]=='O':
-                if a=='o':
-                    print('Player 1 wins!')
-                else:
-                    print('Player 2 wins!')
-                break
-            elif l[7]=='X' and l[8]=='X' and l[9]=='X':
-                if a=='x':
-                    print('Player 1 wins!')
-                else:
-                    print('Player 2 wins!')
-                break
-            elif l[7]=='O' and l[8]=='O' and l[9]=='O':
-                if a=='o':
-                    print('Player 1 wins!')
-                else:
-                    print('Player 2 wins!')
-                break
-            elif l[3]=='X' and l[6]=='X' and l[9]=='X':
-                if a=='x':
-                    print('Player 1 wins!')
-                else:
-                    print('Player 2 wins!')
-                break
-            elif l[3]=='O' and l[6]=='O' and l[9]=='O':
-                if a=='o':
-                    print('Player 1 wins!')
-                else:
-                    print('Player 2 wins!')
-                break
-            elif l[1]=='X' and l[5]=='X' and l[9]=='X':
-                if a=='x':
-                    print('Player 1 wins!')
-                else:
-                    print('Player 2 wins!')
-                break
-            elif l[1]=='O' and l[5]=='O' and l[9]=='O':
-                if a=='o':
-                    print('Player 1 wins!')
-                else:
-                    print('Player 2 wins!')
-                break
-            elif l[3]=='X' and l[5]=='X' and l[7]=='X':
-                if a=='x':
-                    print('Player 1 wins!')
-                else:
-                    print('Player 2 wins!')
-                break
-            elif l[3]=='O' and l[5]=='O' and l[7]=='O':
-                if a=='o':
-                    print('Player 1 wins!')
-                else:
-                    print('Player 2 wins!')
-                break
+
+            elif i==9:
+                for j in range(1,10):
+                    if l[j]!='_':
+                        f1+=1                
+                if f1==9:
+                    print('DRAW!\n')
 
         print('\nGAME OVER!\nWhat do you want to do now?')
 
