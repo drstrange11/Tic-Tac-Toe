@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 A small python program with which you can play Tic-Tac-Toe.
-
+(USES Python 2)
 Player can choose either X or O.
 
 The person who gets to insert first is chosen randomly.
